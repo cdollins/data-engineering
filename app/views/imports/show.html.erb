@@ -1,4 +1,8 @@
-<table>
+<div class="header">
+	<div class="pull-right"><%= link_to "Log Out (" + current_user.email + ")", destroy_user_session_path -%></div>
+	<h3>Purchases for Import(<%= @import.id %>)</h3>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
 	  <th>Purchase Name</th>
@@ -24,4 +28,4 @@
   </tbody>
 </table>
 
-<%= link_to 'Back', imports_path %>
+<%= link_to 'Back', imports_path, class: "btn btn-primary" %>
