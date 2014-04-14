@@ -16,7 +16,7 @@ class ImportsController < ApplicationController
 
   # GET /imports/new
   def new
-    @import = Import.new
+    redirect_to imports_path
   end
 
   # GET /imports/1/edit

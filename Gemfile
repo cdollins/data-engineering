@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 gem 'rspec-rails', '~> 3.0.0.beta', group: :test
 gem "shoulda-matchers", "1.5.4", group: :test
 
+gem "devise"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
