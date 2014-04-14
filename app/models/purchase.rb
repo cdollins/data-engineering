@@ -5,7 +5,7 @@ class Purchase < ActiveRecord::Base
   belongs_to :item
   belongs_to :customer
   
-  def self.import_from_file(file)
+  def self.import_from_file(file, import=nil)
     
     tsv = CSV(file, { :col_sep => "\t" })
     headers = tsv.readline
@@ -14,7 +14,7 @@ class Purchase < ActiveRecord::Base
       merchant = Merchant.where(name: options["merchant name"]).first_or_create(address: options["merchant address"])
       item = Item.where(description: options["item description"]).first_or_create(price: options["item price"])
       customer = Customer.where(name: options["purchaser name"]).first_or_create
-      purchase = Purchase.create(count: options["purchase count"], merchant: merchant, item: item, customer: customer)
+      purchase = Purchase.create(count: options["purchase count"], merchant: merchant, item: item, customer: customer, import: import)
       purchase.count * item.price + total
     end
   end

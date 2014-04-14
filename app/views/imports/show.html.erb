@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+	  <th>Purchase Name</th>
+	  <th>Item Description</th>
+	  <th>Item Price</th>
+	  <th>Purchase Count</th>
+      <th>Merchant Address</th>
+	  <th>Merchant Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @import.purchases.each do |purchase| %>
+      <tr>
+	  <th><%= purchase.customer.name %></th>
+	  <th><%= purchase.item.description %></th>
+	  <th><%= purchase.item.price %></th>
+      <th><%= purchase.count %></th>
+	  <th><%= purchase.merchant.address %></th>
+	  <th><%= purchase.merchant.name %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', imports_path %>

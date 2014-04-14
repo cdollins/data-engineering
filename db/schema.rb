@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413070708) do
+ActiveRecord::Schema.define(version: 20140414043431) do
 
   create_table "customers", force: true do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140413070708) do
 
   create_table "imports", force: true do |t|
     t.string   "data"
-    t.decimal  "total",      default: 0.0
+    t.decimal  "total"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140413070708) do
     t.integer  "merchant_id"
     t.integer  "item_id"
     t.integer  "customer_id"
+    t.integer  "import_id"
   end
 
 end
